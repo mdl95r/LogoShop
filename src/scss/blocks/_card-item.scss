@@ -1,0 +1,104 @@
+.card-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 264px;
+    height: 384px;
+    padding: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 1px solid #cecece;
+    @media (min-width: 1024px) and (max-width: 1100px) {
+        flex: 0 1 30.33%;
+        margin-right: 10px;
+    }
+    &__img-wrap {
+        text-align: center;
+    }
+    &__body {
+        opacity: 1;
+    }
+    &__titles {
+        margin-bottom: 10px;
+    }
+    &__name {
+        margin-bottom: 7px;
+        a {
+            color: #36949F;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__category-title {
+        font-weight: normal;
+        color: #36949F;
+    }
+    &__main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__old-price {
+        color: #999;
+        text-align: right;
+        text-decoration: line-through;
+    }
+    &__price {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+    &__add-good {
+        width: 40px;
+        height: 40px;
+        background: url("../img/card-item/purchase.png");
+        opacity: 1;
+        &:hover {
+            background: url("../img/card-item/purchase-hover.png") no-repeat;
+            transition: .3s;
+        }
+    }
+}
+
+.item-labels {
+    &__label {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 5px 5px 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: #ff9933;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .cards__list {
+        .card-item {
+            &:hover {
+                .card-item {
+                    &__body, &__add-good {
+                        opacity: 0;
+                        transition: .3s;
+                    }
+                    &__price {
+                        z-index: 10;
+                        color: #fff;
+                    }
+                    &__old-price {
+                        position: relative;
+                        z-index: 10;
+                    }
+                }
+                .card-popup {
+                    left: 0;
+                    cursor: pointer;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}

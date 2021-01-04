@@ -1,0 +1,38 @@
+-
+    const menu = ['Бренды','Распродажа','Доставка и Сборка','Гарантия','Оплата','Контакты']
+
+header.header
+    .header-wrapper
+        .container
+            .header-top
+                .header-top__column
+                    nav.header-top__menu.menu
+                        ul.menu__list
+                            each item in menu
+                                li.menu__item
+                                    a.menu__link(href="#!") #{item}
+                    button.header-top__burger-btn.burger-btn.js-burger-btn(type="button")
+                        span.burger-btn__capel
+                    .mob-menu.js-mob-menu
+                        ul.mob-menu__list
+                            each item in menu
+                                li.mob-menu__item
+                                    a.mob-menu__link(href="#!") #{item}
+                        +contacts.mob-menu__contacts
+                        +times.mob-menu__times
+                        +callback.mob-menu__callback
+                        +actions-site.mob-menu__actions
+                .header-top__column.header-top__column_logo
+                    img.header-top__logo(src="img/logo.png" alt="логотип logoShop")
+                    p.header-top__logo-text.logo__text спортивный магазин
+                .header-top__column
+                    +contacts.header-top__contacts
+                    +basket.header-top__basket
+    .container
+        .header-bottom
+            +actions-site.header-bottom__column
+            .header-bottom__column.actions
+                +callback
+                +times.header-bottom__times
+                +basket.header-bottom__basket
+

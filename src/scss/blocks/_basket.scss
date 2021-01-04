@@ -1,0 +1,24 @@
+.basket {
+    position: relative;
+    width: 39px;    
+    height: 39px;
+    margin-left: 33px;
+    background: url("../img/basket.png") no-repeat;
+    @media (max-width: 768px) {
+        display: none;
+    }
+    &__count {
+        position: absolute;
+        top: -2px;
+        right: -32px;
+        width: 40px;
+        height: 26px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.3;
+        color: #fff;
+        text-align: center;
+        background-color: #F68038;
+        border-radius: 20px;
+    }
+}

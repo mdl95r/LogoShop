@@ -1,0 +1,167 @@
+include _card-item.pug
+
+-
+    const cardArr = [
+        [
+            {
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '34 990',
+                oldprice: '14 990',
+            },{
+                img: 'card-img-3',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '64 990',
+                oldprice: '20 990',
+                stock: false,
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '90 990',
+                oldprice: '140 990',
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '34 990',
+                oldprice: '14 990',
+            },{
+                img: 'card-img-3',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '64 990',
+                oldprice: '20 990',
+                stock: false,
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '90 990',
+                oldprice: '140 990',
+            },
+        ],
+        [
+            {
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '24 990',
+                oldprice: '54 990',
+                stock: false,
+            },{
+                img: 'card-img-3',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '64 990',
+                oldprice: '100 990',
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '67 990',
+                oldprice: '80 990',
+                stock: false,
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '34 990',
+                oldprice: '14 990',
+            },{
+                img: 'card-img-3',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '64 990',
+                oldprice: '20 990',
+                stock: false,
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '90 990',
+                oldprice: '140 990',
+            },
+        ],
+        [
+            {
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '90 990',
+                oldprice: '140 990',
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '24 990',
+                oldprice: '54 990',
+                stock: false,
+            },{
+                img: 'card-img-3',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '64 990',
+                oldprice: '100 990',
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '67 990',
+                oldprice: '80 990',
+                stock: false,
+            },{
+                img: 'card-img-2',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '34 990',
+                oldprice: '14 990',
+            },{
+                img: 'card-img-3',
+                alt: 'Беговая дорожка',
+                itemName: 'BH Fitness F1 G6414V',
+                categoryTitle: 'Беговая дорожка',
+                price: '64 990',
+                oldprice: '20 990',
+                stock: false,
+            }
+        ],
+    ]
+
+main.main-content
+    +search.main-content__search
+    +banner.main-content__banner
+    section.cards
+        .cards__container.swiper-container
+            .cards__top
+                h2.cards__title Популярные товары
+                .cards__slider-control.slider-control
+                    button.slider-control__btn.btn__arrow_left.js-cards-prev
+                    .slider-control__counter
+                        .slider-control__current-item.js-current-item 1
+                        .slider-control__all-items.js-all-items 2
+                    button.slider-control__btn.btn__arrow_right.js-cards-next
+            .cards__list.swiper-wrapper
+                each itemsCol in cardArr
+                    .cards__slide.swiper-slide
+                        each item in itemsCol
+                            +card-item(item)

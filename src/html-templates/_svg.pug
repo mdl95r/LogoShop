@@ -1,0 +1,3 @@
+mixin svg(id, spritePath)
+	svg(width="1em" height="1em")&attributes(attributes)
+		use(xlink:href=`${spritePath || 'img/sprite.symbol.svg'}#icon-${id}`)

@@ -1,0 +1,205 @@
+.aside {
+    position: relative;
+    width: 100%;
+    @media (min-width: 1100px) {
+        width: 260px;
+    }
+    &__list {
+        max-height: 0;
+        overflow: hidden;
+        transition: .3s;
+        &--show {
+            max-height: 825px;
+            transition: .3s;
+        }
+    }
+    &__nav {
+        margin-bottom: 30px;
+        background-color: #14c0d4;
+    }
+    &__title {
+        font-size: 30px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    &__item {
+        margin-bottom: 0;
+        border-bottom: 1px solid #1aa7b9;
+        &:hover {
+            background: #098494;
+            transition: .3s;
+        }
+        &--submenu {
+            background: url("../img/arrow-right.png") no-repeat;
+            background-position: 95% 50%;
+            &:hover {
+                background: url("../img/arrow-right.png") #098494 no-repeat;
+                background-position: 95% 50%;
+                @media (max-width: 1100px) {
+                    background: none; 
+                }
+            }
+        }
+        &--submenu-hovered {
+            background: url("../img/arrow-right.png") #098494 no-repeat;
+            background-position: 95% 50%;
+            @media (max-width: 1100px) {
+                .aside__link {
+                    background-color: #098494;
+                }
+            }
+        }
+    }
+    &__link {
+        display: block;
+        padding: 12px 20px;
+        color: #fff;
+    }
+}
+
+.aside-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+    margin-bottom: 20px;
+}
+
+.burger-aside {
+    display: block;
+    padding: 20px;
+    background-color: #068292;
+    &:after {
+        top: 18px;
+        left: 9px;
+    }
+    &:before {
+        top: 10px;
+        left: 9px;
+    }
+    &.burger-btn--active {
+        &:after,
+        &:before {
+            top: 18px;
+            left: 9px;
+        }
+    }
+}
+
+.news {
+    margin-bottom: 15px;
+    @media (min-width: 1100px) {
+        margin-bottom: 50px;
+    }
+    &__title {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #1ab9ce;
+        text-transform: uppercase;
+    }
+}
+
+.news-item {
+    font-family: 'Roboto', sans-serif;
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    &__title {
+        margin-bottom: 20px;
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1.4;
+        color: #333;
+        text-transform: uppercase;
+        &--sale {
+            color: #fd8322;
+        }
+    }
+    &__text {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #666;
+    }
+    &__date {
+        padding: 10px 20px;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: #d8d8d8;
+        span {
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+    &__body {
+        display: flex;
+    }
+}
+
+.reviews {
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    @media (min-width: 1100px) {
+        margin-bottom: 0;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        &:hover {
+            .reviews {
+                &__name, &__date {
+                    color: #1ab9ce;
+                    transition: .3s;
+                }
+                &__text {
+                    color: #fff;
+                    background-color: #1ab9ce;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+    &__title {
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 1.2;
+        color: #dadada;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+    }
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    &__name {
+        margin-bottom: 10px;
+        font-weight: 900;
+        color: #333;
+    }
+    &__date {
+        font-size: 12px;
+        font-weight: 300;
+        color: #999;
+    }
+    &__text {
+        position: relative;
+        padding: 10px 10px 10px 40px;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.4;
+        color: #666;
+        &:before {
+            position: absolute;
+            top: -4px;
+            left: 10px;
+            font-size: 60px;
+            color: #dadada;
+            content: "”";
+        }
+    }
+}

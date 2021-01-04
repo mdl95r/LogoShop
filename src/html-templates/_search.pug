@@ -1,0 +1,10 @@
+mixin search
+    form.search&attributes(attributes)
+        button.search__icon-btn
+        a.search__title.js-search-title(data-text-rus="Выбрано:" data-text-default-rus="Везде" href="#!") Везде
+        input.search__input(type="text")
+        button.search__btn.js-search-btn Найти
+        ul.search__dropdown.search-dropdown
+            each item,i in asidemenu
+                li.search-dropdown__item
+                    a.search-dropdown__link.search-dropdown__link_active(href="#!" data-id-category=`${i + 300}`) #{item.text}

@@ -1,0 +1,51 @@
+include _card-popup.pug
+
+mixin card-item(data)
+    -
+        const defaultData = {
+            labels: false,
+            img: 'card-img',
+            alt: 'товар тенисный стол',
+            itemName: 'Donic Indoor Roller 800 Green',
+            categoryTitle: 'Домашний тенисный стол',
+            price: '64 990',
+            oldprice: '11 990',
+            cardPopup: true,
+            stock: true,
+        }
+
+        data = Object.assign(defaultData, data);
+        const {
+            labels,
+            img, 
+            alt, 
+            itemName, 
+            categoryTitle, 
+            price,
+            oldprice,
+            cardPopup,
+            stock,
+        } = data
+
+    .card-item
+        .card-item__header
+            if data.labels
+                .card-item__labels.item-labels
+                    .item-labels__label товар дня
+            .card-item__img-wrap
+                img(src=`img/card-item/${data.img}.png`, alt=`${data.alt}`)
+        .card-item__body
+            .card-item__titles
+                h3.card-item__name 
+                    a(href="#!") #{data.itemName}
+                h3.card-item__category-title #{data.categoryTitle}
+        .card-item__footer
+            if data.oldprice
+                .card-item__old-price.price--rub #{data.oldprice}
+            .card-item__main-content
+                a.card-item__add-good(href="#!")
+                .card-item__price.price--rub #{data.price}
+        if data.cardPopup && data.stock
+            +card-popup
+        else if data.cardPopup
+            +card-popup({stock: false})

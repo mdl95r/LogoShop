@@ -1,0 +1,44 @@
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    &__item {
+        flex: 0 1 33.333%;
+        @media (max-width: 1150px) {
+            flex: none;
+        }
+        &:first-child {
+            @media (max-width: 1150px) {
+                margin-right: 0;
+                border-right: 0;
+            }
+        }
+        &:not(:first-child) {
+            @media (max-width: 1150px) {
+                display: none;
+            }
+        }
+        &_icon {
+            position: relative;
+            margin-right: 20px;
+            border-right: 1px solid #fff;
+            &:after {
+                position: absolute;
+                top: 13px;
+                left: -34px;
+                width: 19px;
+                height: 25px;
+                content: "";
+                background: url("../img/tel.png");
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    &__link {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &__label {
+        margin-bottom: 10px;
+    }
+}

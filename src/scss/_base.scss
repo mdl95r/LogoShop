@@ -1,0 +1,52 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+body {
+    min-width: 320px;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background: #fff;
+}
+
+ul, li {
+	list-style: none;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1141px;
+    margin: 0 auto;
+    @media (max-width: 1150px) {
+        padding: 0 15px;
+    }
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+label {
+    cursor: pointer;
+}

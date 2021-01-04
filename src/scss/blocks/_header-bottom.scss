@@ -1,0 +1,28 @@
+.header-bottom {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    @media (max-width: 640px) {
+        display: none;
+    }
+    &__column {
+        display: flex;
+        flex: 0 1 50%;
+        @media (max-width: 1150px) {
+            justify-content: center;
+        }
+        &:nth-child(2) {
+            align-items: center;
+            justify-content: center;
+            padding-left: 75px;
+            @media (max-width: 768px) {
+                padding-left: 100px;
+            }
+        }
+    }
+    &__times {
+        @media (max-width: 1150px) {
+            display: none;
+        }
+    }
+}

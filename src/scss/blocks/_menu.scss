@@ -1,0 +1,23 @@
+.menu {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex: 0 1 33.333%;
+        margin-bottom: 15px;
+        &:nth-child(1n+4) {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        padding: 5px 10px;
+        font-weight: bold;
+        text-decoration: underline;
+        &:hover {
+            background: #068292;
+            border-radius: 20px;
+            transition: background .3s ease;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.header-top {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    @media (max-width: 640px) {
+        padding-top: 10px;
+    }
+    a {
+        color: #fff;
+    }
+    &__column {
+        flex: 0 1 50%;
+        &_logo {
+            flex: 0 1 190px;
+            align-self: flex-start;
+            text-align: center;
+        }
+    }
+    &__menu {
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+    &__contacts {
+        @media (max-width: 640px) {
+            display: none;
+        }
+    }
+    &__basket {
+        display: none;
+        @media (max-width: 640px) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

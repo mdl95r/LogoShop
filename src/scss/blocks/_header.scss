@@ -1,0 +1,43 @@
+.header {
+    margin-bottom: 10px;
+    @media (min-width: 1100px) {
+        margin-bottom: 30px;
+    }
+}
+
+.header-wrapper {
+    position: relative;
+    height: 100px;
+    background: #0098AC;
+    @media (max-width: 640px) {
+        height: 92px;
+        margin-bottom: 20px;
+    }
+    &:after {
+        position: absolute;
+        bottom: -38px;
+        left: 50%;
+        z-index: -1;
+        width: 200px;
+        height: 100px;
+        content: '';
+        background: #0098ac;
+        border-radius: 0 0 100% 100%;
+        transform: translateX(-50%);
+        @media (max-width: 640px) {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

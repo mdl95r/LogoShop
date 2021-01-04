@@ -1,0 +1,37 @@
+mixin card-popup(data)
+    -
+        const defaultData = {
+            name: 'BH Fitness F1 G6414V',
+            categoryTitle: 'Беговая дорожка ',
+            features: [
+                {
+                    title: 'Тип беговой дорожки:',
+                    feature: 'Электрическая',
+                },{
+                    title: 'Скорость движения км/ч:',
+                    feature: '22',
+                },{
+                    title: 'Складывание:',
+                    feature: 'Есть',
+                },
+            ],
+            stock: true,
+        }
+        data = Object.assign(defaultData, data);
+        const {
+            name,
+            categoryTitle,
+            features,
+            stock,
+        } = data
+    .card-item__popup.card-popup
+        .card-popup__title-wrap
+            .card-popup__name #{data.name}
+            .card-popup__category-title #{data.categoryTitle}
+        .card-popup__features.features
+            each feature in data.features
+                .features__title #{feature.title}
+                .features__feature #{feature.feature}
+        button.card-popup__add-good
+        if stock
+            .card-popup__stock в наличии

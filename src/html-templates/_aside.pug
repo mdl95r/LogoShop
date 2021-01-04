@@ -1,0 +1,154 @@
+include _card-item.pug
+-
+    const asidemenu = [
+        {
+            text: 'Беговые дорожки',
+            submenu: [
+                'Всепогодный',
+                'Для помещений',
+                'Профессиональный',
+                'Любительский',
+            ],
+            carditem: {
+                labels: true,
+                img: 'card-img',
+                alt: 'товар тенисный стол',
+                itemName: 'Donic Indoor Roller 800 Green',
+                categoryTitle: 'Домашний тенисный стол',
+                price: '63 000',
+                oldprice: null,
+                cardPopup: null,
+            },
+        },{
+            text: 'Эллиптические тренажеры',
+            submenu: [
+                'Домашний',
+                'Профессиональный',
+                'Любительский',
+            ],
+            carditem: {
+                labels: true,
+                img: 'card-img',
+                alt: 'товар тенисный стол',
+                itemName: 'Donic Indoor Roller 800 Green',
+                categoryTitle: 'Домашний тенисный стол',
+                price: '23 000',
+                oldprice: null,
+                cardPopup: null,
+            },
+        },{
+            text: 'Велотренажеры',
+        },{
+            text: 'Гребные тренажеры',
+        },{
+            text: 'Вибромассажеры',
+        },{
+            text: 'Теннисные столы',
+            submenu: [
+                'Для улицы',
+                'Профессиональный',
+                'Любительский',
+                'Складные',
+                'Детские',
+                'Антивандальные',
+                'Для помещений',
+            ],
+            carditem: {
+                labels: true,
+                img: 'card-img',
+                alt: 'товар тенисный стол',
+                itemName: 'Donic Indoor Roller 800 Green',
+                categoryTitle: 'Домашний тенисный стол',
+                price: '23 000',
+                oldprice: null,
+                cardPopup: null,
+            },
+        },{
+            text: 'Баскетбол',
+        },{
+            text: 'Массажные кресла',
+            submenu: [
+                'Кресла для дома', 
+                'Кресла для офиса', 
+                'Премиальные кресла',
+            ],
+            carditem: {
+                labels: true,
+                img: 'card-img',
+                alt: 'товар тенисный стол',
+                itemName: 'Donic Indoor Roller 800 Green',
+                categoryTitle: 'Домашний тенисный стол',
+                price: '91 000',
+                oldprice: null,
+                cardPopup: null, 
+            },
+        },{
+            text: 'Массажные столы',
+        },{
+            text: 'Силовые тренажеры',
+        },{
+            text: 'Батуты',
+        },{
+            text: 'Детские городки',
+        },{
+            text: 'Дачная мебель',
+        },{
+            text: 'Уличные спортивные комплексы',
+        },{
+            text: 'Аксессуары',
+        }
+    ]
+
+aside.aside
+    nav.aside__nav
+        .aside-head
+            h2.aside__title Каталог <br> товаров
+            button.burger-aside.burger-btn.js-burger-aside
+        ul.aside__list
+            each item in asidemenu
+                if item.submenu
+                    li.aside__item.aside__item--submenu
+                        a.aside__link(href="#!") #{item.text}
+                        .submenu-item
+                            ul.submenu-item__menu-list.submenu-list
+                                each subItem in item.submenu
+                                    li.submenu-list__item
+                                        a.submenu-list__link(href="#!") #{subItem}
+                            +card-item(item.carditem)
+                        .mobile-submenu
+                            ul.submenu-item__menu-list.submenu-list
+                                each subItem in item.submenu
+                                    li.submenu-list__item
+                                        a.submenu-list__link(href="#!") #{subItem}
+
+                else
+                    li.aside__item
+                        a.aside__link(href="#!") #{item.text}
+    .aside__news.news
+        h2.news__title Новости
+        ul.news__list
+            li.news-list__item.news-item
+                h3.news-item__title.news-item__title--sale Снижение цен на игровые площадки Jungle Gym
+                .news-item__body
+                    time.news-item__date(datetime="2015-09-12T10:48") 12 
+                        span авг
+                    p.news-item__text Уважаемые покупатели! Мы рады сообщить вам о снижении цены с 27 июля на детский игровой комплекс
+            li.news-list__item.news-item
+                h3.news-item__title Поступление батутов Eclipse!
+                .news-item__body
+                    time.news-item__date(datetime="2015-09-19T10:48") 19 
+                        span авг
+                    p.news-item__text Уважаемые покупатели! Мы рады сообщить вам о снижении цены с 27 июля на детский игровой комплекс
+    .aside__reviews.reviews
+        h2.reviews__title Отзывы
+        ul.reviews__list
+            li.reviews__item
+                .reviews__head
+                    h3.reviews__name Павел Никифоров
+                    time.reviews__date(datetime="2015-09-12T10:48") 12.09.2015
+                .reviews__text Ради экономии места в тренажерном зале приобрел многофункциональный силовой тренажер Life Gear. За такую небольшую стоимость и с такими возможностями, он просто не заменим.
+            li.reviews__item
+                .reviews__head
+                    h3.reviews__name Степан Николаевич
+                    time.reviews__date(datetime="2015-09-12T10:48") 12.09.2015
+                .reviews__text Спасибо за прекрасный совет, велосипед всей семье понравился и цену за него достойную запросили.

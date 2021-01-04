@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="css/normalize.min.css")
+        link(rel="stylesheet", href="css/style.min.css")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        block vars
+        
+        block seo
+            title Logo Shop
+    body
+        block content
+            include _index.pug
+            include ../_header.pug
+            .container.flex
+                include ../_aside.pug
+                include ../_main.pug
+            include ../_main-bottom.pug
+            include ../_footer.pug
+            script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
+            script(src="js/scripts-min.js")

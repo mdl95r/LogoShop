@@ -1,0 +1,210 @@
+.footer {
+    padding-top: 50px;
+    &__other-info {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    &__left-col {
+        display: flex;
+        flex: 0 1 50%;
+    }
+    &__rigt-col {
+        flex: 0 1 50%;
+    }
+    &__logo-wrap {
+        width: 164px;
+        padding: 22px;
+        margin-bottom: 20px;
+        text-align: center;
+        background: #14C0D4;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+    }
+    &__contacts {
+        position: relative;
+        flex-direction: column;
+        padding-left: 30px;
+        margin-bottom: 20px;
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 19px;
+            height: 25px;
+            content: "";
+            background: url("../img/tel-2.png") no-repeat;
+            background-position: 2% 50%;
+            transform: translateY(-50%);
+        }
+        .contacts__item {
+            margin-right: 0;
+            @media (max-width: 992px) {
+                display: initial;
+            }
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            &_icon {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        .contacts__link {
+            color: #333;
+        }
+        .contacts__label {
+            display: none;
+        }
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        border-top: 1px solid #dcdcdc;
+        p {
+            color: #999;
+        }
+    }
+}
+
+.left-col {
+    &__inner {
+        flex: 0 1 40%;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
+        }
+    }
+    &__right-col-inner {
+        flex: 0 1 60%;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
+            margin-top: 20px;
+        }
+    }
+    &__text {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        @media (max-width: 992px) {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+.right-col {
+    &__title {
+        margin-bottom: 5px;
+    }
+    &__text {
+        &:before {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            margin-right: 10px;
+            content: "";
+            background: url("../img/double-arrow.png") no-repeat;
+        }
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+        &:last-child {
+            padding-right: 205px;
+        }
+        @media (max-width: 992px) {
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.widgets {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    @media (max-width: 992px) and (min-width: 768px){
+        justify-content: space-around;
+    }
+    &__item:not(:last-child) {
+        @media (max-width: 576px) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.pay-list {
+    display: flex;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}
+
+.companies {
+    padding: 0px 12px;
+    @media (max-width: 576px) {
+        padding: 0;
+    }
+    &__title {
+        margin-bottom: 30px;
+        font-size: 14px;
+        color: #999;
+        text-transform: uppercase;
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex: 0 1 33.333%;
+        align-self: center;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+.other-info {
+    &__left-col {
+        display: flex;
+        flex: 0 1 50%;
+        flex-wrap: wrap;
+        @media (max-width: 992px) {
+            flex: 0 1 100%;
+        }
+        @media (max-width: 992px) and (min-width: 768px){
+            justify-content: space-around;
+        }
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+    &__right-col {
+        flex: 0 1 50%;
+        @media (max-width: 992px) {
+            flex: 0 1 100%;
+            margin-top: 20px;
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}
