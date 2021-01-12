@@ -45,6 +45,7 @@ const { src, dest } = require('gulp'),
   gulpStylelint = require('gulp-stylelint'),
   cleanCss = require('gulp-clean-css'),
   renameCss = require('gulp-rename'),
+  beml = require('gulp-beml'),
   minify = require('gulp-minify');
 
 function browserSync() {
@@ -68,6 +69,11 @@ function html() {
 function pug() {
   return src(path.src.pug)
     .pipe(gulpPug({ pretty: true }))
+    .pipe(beml({
+      elemPrefix: '__',
+      modPrefix: '_',
+      modDlmtr: '_'
+    }))
     .pipe(webphtml())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream())

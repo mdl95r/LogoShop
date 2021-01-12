@@ -10,66 +10,66 @@
             color: #999;
             transition: color .3s;
         }
-    }
-    &__login {
-        position: relative;
-        color: #999;
-        @media (max-width: 768px) {
-            display: none;
+        &_login {
+            position: relative;
+            color: #999;
+            @media (max-width: 768px) {
+                display: none;
+            }
+            &:after {
+                position: absolute;
+                top: -2px;
+                left: -32px;
+                width: 24px;
+                height: 24px;
+                content: "";
+                background: url("../img/login.png") no-repeat;
+            }
         }
-        &:after {
-            position: absolute;
-            top: -2px;
-            left: -32px;
-            width: 24px;
-            height: 24px;
-            content: "";
-            background: url("../img/login.png") no-repeat;
+        &_register {
+            position: relative;
+            color: #1AB9CE;
+            &:after {
+                position: absolute;
+                top: -2px;
+                left: -35px;
+                width: 24px;
+                height: 24px;
+                content: "";
+                background: url("../img/register.png") no-repeat;
+            }
         }
-    }
-    &__register {
-        position: relative;
-        color: #1AB9CE;
-        &:after {
-            position: absolute;
-            top: -2px;
-            left: -35px;
-            width: 24px;
-            height: 24px;
-            content: "";
-            background: url("../img/register.png") no-repeat;
+        &_email {
+            position: relative;
+            color: #1AB9CE;
+            border-bottom: 1px solid;
+            @media (max-width: 1150px) {
+                display: none;
+            }
+            &:after {
+                position: absolute;
+                top: 5px;
+                left: -36px;
+                width: 24px;
+                height: 24px;
+                content: "";
+                background: url("../img/email.png") no-repeat;
+            }
         }
-    }
-    &__email {
-        position: relative;
-        color: #1AB9CE;
-        border-bottom: 1px solid;
-        @media (max-width: 1150px) {
-            display: none;
-        }
-        &:after {
-            position: absolute;
-            top: 5px;
-            left: -36px;
-            width: 24px;
-            height: 24px;
-            content: "";
-            background: url("../img/email.png") no-repeat;
-        }
-    }
-    &__callback {
-        position: relative;
-        margin-right: 22px;
-        color: #1AB9CE;
-        border-bottom: 1px solid;
-        &:after {
-            position: absolute;
-            top: 0;
-            left: -35px;
-            width: 24px;
-            height: 24px;
-            content: "";
-            background: url("../img/callback.png") no-repeat;
+        &_callback {
+            position: relative;
+            margin-right: 22px;
+            color: #1AB9CE;
+            border-bottom: 1px solid;
+            &:after {
+                position: absolute;
+                top: 0;
+                left: -35px;
+                width: 24px;
+                height: 24px;
+                content: "";
+                background: url("../img/callback.png") no-repeat;
+            }
         }
     }
 }

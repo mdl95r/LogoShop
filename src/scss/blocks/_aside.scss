@@ -112,7 +112,9 @@
         line-height: 1.4;
         color: #333;
         text-transform: uppercase;
-        &--sale {
+    }
+    &__link:hover {
+        .news-item__title {
             color: #fd8322;
         }
     }

@@ -71,19 +71,6 @@
 }
 
 .left-col {
-    &__inner {
-        flex: 0 1 40%;
-        @media (max-width: 992px) {
-            flex: 0 1 auto;
-        }
-    }
-    &__right-col-inner {
-        flex: 0 1 60%;
-        @media (max-width: 992px) {
-            flex: 0 1 auto;
-            margin-top: 20px;
-        }
-    }
     &__text {
         &:not(:last-child) {
             margin-bottom: 30px;
@@ -195,6 +182,19 @@
         flex: 0 1 50%;
         @media (max-width: 992px) {
             flex: 0 1 100%;
+            margin-top: 20px;
+        }
+    }
+    &__inner-left-col {
+        flex: 0 1 40%;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
+        }
+    }
+    &__inner-right-col {
+        flex: 0 1 60%;
+        @media (max-width: 992px) {
+            flex: 0 1 auto;
             margin-top: 20px;
         }
     }

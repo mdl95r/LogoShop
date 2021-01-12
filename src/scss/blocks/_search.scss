@@ -77,31 +77,27 @@
         left: 0;
         z-index: 3;
         width: 100%;
-        opacity: 0;
-        transition: .2s;
+        max-height: 0;
+        overflow: hidden;
+        column-count: 3;
         @media (max-width: 768px) {
-            display: none;
+            column-count: 2;
+        }
+        @media (max-width: 576px) {
+            column-count: 1;
         }
         &_show {
-            opacity: 1;
-            transition: .3s;
-            @media (max-width: 768px) {
-                display: block;
-            }
+            max-height: 600px;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            border-bottom: 3px solid #f97423;
+            transition: max-height .3s;
         }
     }
 }
 
 .search-dropdown {
-    padding: 20px;
-    column-count: 2;
     background: #fff;
-    border: 1px solid #e6e6e6;
-    border-bottom: 3px solid #f97423;
-    @media (min-width: 768px) {
-        column-count: 3;
-        padding: 30px;
-    }
     &__item {
         margin-bottom: 20px;
     }
