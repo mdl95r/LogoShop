@@ -1,21 +1,23 @@
 .contacts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;    
+    justify-content: center;
+    @media (max-width: 1150px) {
+        flex-direction: column;
+        align-items: center;
+    }
     &__item {
         flex: 0 1 33.333%;
         @media (max-width: 1150px) {
             flex: none;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
         }
         &:first-child {
             @media (max-width: 1150px) {
                 margin-right: 0;
                 border-right: 0;
-            }
-        }
-        &:not(:first-child) {
-            @media (max-width: 1150px) {
-                display: none;
             }
         }
         &_icon {
@@ -40,5 +42,8 @@
     }
     &__label {
         margin-bottom: 10px;
+        @media (max-width: 1150px) {
+            display: none;
+        }
     }
 }

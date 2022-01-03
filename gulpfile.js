@@ -1,3 +1,5 @@
+const Path = require("path");
+
 const project_folder = "dist";
 const source_folder = "src";
 const components = "components";
@@ -69,11 +71,6 @@ function html() {
 function pug() {
   return src(path.src.pug)
     .pipe(gulpPug({ pretty: true }))
-    .pipe(beml({
-      elemPrefix: '__',
-      modPrefix: '_',
-      modDlmtr: '_'
-    }))
     .pipe(webphtml())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream())
@@ -81,7 +78,6 @@ function pug() {
 
 function js() {
   return src(path.src.js)
-    // .pipe(fileinclude())
     .pipe(minify({ noSource: true }))
     .pipe(dest(path.build.js))
     .pipe(browsersync.stream())
@@ -167,6 +163,12 @@ function clean() {
   return del(path.clean)
 }
 
+function copyStatic() {
+  const directoryName = Path.basename(__dirname);
+  console.log("\x1b[36m",`Project will be copied to the folder ${directoryName}`);
+  return gulp.src('dist/**').pipe(gulp.dest(`../my-projects-storage/${directoryName}`))
+}
+
 const build = gulp.series(clean, gulp.parallel(js, css, html, pug, images, fonts));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
@@ -176,6 +178,7 @@ exports.fonts = fonts;
 exports.css = css;
 exports.html = html;
 exports.pug = pug;
+exports.copyStatic = copyStatic;
 exports.lintCss = lintCss;
 exports.build = build;
 exports.watch = watch;

@@ -2,14 +2,13 @@
     position: relative;
     width: 100%;
     @media (min-width: 1100px) {
-        width: 260px;
+        flex: 0 1 22.8%;
     }
-    &__list {
-        max-height: 0;
+    &__menu-list {
+        height: 0;
         overflow: hidden;
         transition: .3s;
         &--show {
-            max-height: 825px;
             transition: .3s;
         }
     }
@@ -25,29 +24,23 @@
     &__item {
         margin-bottom: 0;
         border-bottom: 1px solid #1aa7b9;
-        &:hover {
-            background: #098494;
-            transition: .3s;
+        @media (min-width: 1100px) {
+            &:hover {
+                background: #098494;
+                transition: .3s;
+            }
         }
         &--submenu {
             background: url("../img/arrow-right.png") no-repeat;
             background-position: 95% 50%;
-            &:hover {
-                background: url("../img/arrow-right.png") #098494 no-repeat;
-                background-position: 95% 50%;
-                @media (max-width: 1100px) {
-                    background: none; 
+            @media (min-width: 1100px) {
+                &:hover {
+                    background: none #098494;
                 }
             }
         }
         &--submenu-hovered {
-            background: url("../img/arrow-right.png") #098494 no-repeat;
-            background-position: 95% 50%;
-            @media (max-width: 1100px) {
-                .aside__link {
-                    background-color: #098494;
-                }
-            }
+            background: none #098494;
         }
     }
     &__link {

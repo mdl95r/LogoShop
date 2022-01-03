@@ -4,9 +4,8 @@
   "description": "Logo Shop",
   "scripts": {
     "start": "gulp",
-    "build": "babel dist/js -d src/js --presets es2015",
-    "eslint": "eslint ./src",
-    "eslint:fix": "eslint ./src --fix"
+    "copy": "gulp copyStatic",
+    "build": "babel dist/js -d src/js --presets es2015"
   },
   "author": "mdl",
   "license": "ISC",

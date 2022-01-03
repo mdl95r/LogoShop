@@ -38,7 +38,7 @@ mixin card-item(data)
             .card-item__titles
                 h3.card-item__name 
                     a(href="#!") #{data.itemName}
-                h3.card-item__category-title #{data.categoryTitle}
+                .card-item__category-title #{data.categoryTitle}
         .card-item__footer
             if data.oldprice
                 .card-item__old-price.price--rub #{data.oldprice}

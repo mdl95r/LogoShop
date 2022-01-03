@@ -25,6 +25,7 @@
     &__contacts {
         position: relative;
         flex-direction: column;
+        align-items: flex-start;
         padding-left: 30px;
         margin-bottom: 20px;
         &:after {
@@ -62,7 +63,9 @@
     &__bottom {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding-top: 20px;
+        padding-bottom: 20px;
         border-top: 1px solid #dcdcdc;
         p {
             color: #999;

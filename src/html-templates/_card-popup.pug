@@ -26,10 +26,10 @@ mixin card-popup(data)
         } = data
     .card-item__popup.card-popup
         .card-popup__title-wrap
-            .card-popup__name #{data.name}
-            .card-popup__category-title #{data.categoryTitle}
+            .card-popup__name #{name}
+            .card-popup__category-title #{categoryTitle}
         .card-popup__features.features
-            each feature in data.features
+            each feature in features
                 .features__title #{feature.title}
                 .features__feature #{feature.feature}
         button.card-popup__add-good

@@ -1,11 +1,11 @@
 .main-content{
-    &__banner {
+    &__hero {
         position: relative;
         margin-bottom: 10px;
         @media (min-width: 768px) {
             margin-bottom: 20px;
         }
-        .banner-dots {
+        .hero-dots {
             position: relative;
             z-index: 2;
             display: flex;
@@ -63,23 +63,39 @@
     }
 }
 
-.banner-list {
-    &__banner-content {
+.hero-list {
+    &__hero-content {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
         width: 100%;
         height: 100%;
-        padding: calc(10px + (30 - 10) * ((100vw - 320px) / (1150 - 320)));
+        padding: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+    }
+    &__item {
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            background: rgba($color: #000000, $alpha: .15)
+        }
+        img {
+            width: 100%;
+        }
     }
 }
 
-.banner-content {
+.hero-content {
     font-weight: 900;
     text-transform: uppercase;
     &__title {
         margin-bottom: 5px;
-        font-size: calc(15px + (48 - 15) * ((100vw - 320px) / (1150 - 320)));
+        font-size: calc(15px + (48 - 15) * ((100vw - 320px) / (1400 - 320)));
         color: #F68038;
         span {
             color: #333;
@@ -131,7 +147,6 @@
             border: 2px solid;
             border-radius: 12px;
             @media (min-width: 768px) {
-                padding: 5px 20px;
                 font-size: initial;
             }
             &:after {
